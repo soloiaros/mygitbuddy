@@ -1,0 +1,12 @@
+[flake8]
+import-style = google
+application-import-names = homepage,users
+exclude = 
+    settings.py,
+    */migrations/,
+    venv/,
+    env/,
+    .venv/,
+    .env/,
+    .git,
+    __pycache__

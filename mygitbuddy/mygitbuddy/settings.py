@@ -1,5 +1,4 @@
 import os
-
 from pathlib import Path
 
 
@@ -9,7 +8,11 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.getenv('DJANGO_KEY', 'fake_key_lol')
 
 DEBUG = os.getenv('DJANGO_DEBUG', 'true').lower() in [
-    'true', 't', '1', 'yes', 'y',
+    'true',
+    't',
+    '1',
+    'yes',
+    'y',
 ]
 
 ALLOWED_HOSTS = []
@@ -47,7 +50,7 @@ TEMPLATES = [
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [
             os.path.join(PROJECT_PATH, 'static', 'templates'),
-            ],
+        ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -66,7 +69,7 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': BASE_DIR / 'db.sqlite3',
-    }
+    },
 }
 
 
