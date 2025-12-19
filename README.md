@@ -1,0 +1,1 @@
+[![Lint](https://github.com/soloiaros/mygitbuddy/actions/workflows/lint.yml/badge.svg)](https://github.com/soloiaros/mygitbuddy/actions/workflows/lint.yml)
