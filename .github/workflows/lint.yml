@@ -3,24 +3,32 @@ name: Lint
 on:
   push:
     paths:
-      - '*.py'
+      - '**/*.py'
+  pull-request:
+    paths:
+      - '**/*.py'
 
 jobs:
   flake8_py3:
     runs-on: ubuntu-latest
+
     steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
       - name: Setup Python
         uses: actions/setup-python@v1
         with:
-          python-version: 3.13.5
-          architecture: x64
-      - name: Checkout PyTorch
-        uses: actions/checkout@master
-      - name: Install testing tools
-        run: pip install -r requirements/test.txt
+          python-version: '3.12'
+
+      - name: Install Linting Tools
+        run:
+          pip install -r requirements/test.txt
+
+      - name: Run black
+        run:
+          black --check mygitbuddy
+
       - name: Run flake8
-        uses: suo/flake8-github-action@releases/v1
-        with:
-          checkName: 'flake8_py3'
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run:
+          flake8 --verbose
