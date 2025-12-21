@@ -9,4 +9,5 @@ exclude =
     .venv/,
     .env/,
     .git,
-    __pycache__
+    __pycache__,
+    manage.py

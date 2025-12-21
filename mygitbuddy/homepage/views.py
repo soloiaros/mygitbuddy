@@ -1,5 +1,5 @@
-from django.http import HttpResponse
+from django.shortcuts import render
 
 
 def homepage_view(request):
-    return HttpResponse('<body>Hey there</body>')
+    return render(request, template_name='homepage.html')

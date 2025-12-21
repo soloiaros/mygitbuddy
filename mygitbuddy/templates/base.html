@@ -1,0 +1,28 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ page_title }}</title>
+  <link rel="stylesheet" href="{% static 'styles/base_styles.css' %}">
+</head>
+<body>
+  <header>
+    <div class="header-element">
+      <a href="/homepage/">Main</a>
+    </div>
+    <div class="header-element">
+      <a href="/account/">Account</a>
+    </div>
+  </header>
+  <main>
+    {% block content %}
+    {% endblock %}
+  </main>
+  <footer>
+    <div>The Git Buddy Project</div>
+  </footer>
+</body>
+</html>

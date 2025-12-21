@@ -1,21 +1,17 @@
-import django.contrib.auth.views
+import django.contrib.auth.urls
 from django.contrib import admin
 from django.urls import include, path
+
+import homepage.urls
 
 
 urlpatterns = [
     path('admin/', admin.site.urls, name='admin'),
     path(
-        'login/',
-        django.contrib.auth.views.LoginView.as_view(
-            template_name='login.html',
-            next_page='/homepage/',
-        ),
-        name='login',
-    ),
-    path(
         'homepage/',
-        include('homepage.urls'),
+        include(homepage.urls),
         name='homepage',
     ),
 ]
+
+urlpatterns += [path('', include(django.contrib.auth.urls))]

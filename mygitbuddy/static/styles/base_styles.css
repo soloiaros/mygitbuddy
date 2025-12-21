@@ -1,0 +1,53 @@
+:root {
+  box-sizing: border-box;
+  --body-background-light: #F2EFE9;
+  --header-background-light: #EA9010;
+  --base-text-color-light: #252627;
+  --header-text-color-light: #F2EFE9;
+  --footer-background-color: #564E58;
+  --footer-text-color: #F2EFE9;
+}
+
+body {
+  background-color: var(--body-background-light);
+  color: var(--base-text-color-light);
+  padding: 0;
+  line-height: 1.2;
+  margin: 0;
+}
+
+header {
+  position: sticky;
+  top: 0;
+  background-color: var(--header-background-light);
+  display: flex;
+  padding: 1rem;
+  margin: 0 0 1.5rem;
+}
+
+header .header-element {
+  padding: 0.5rem;
+  font-size: 1.2rem;
+  justify-content: flex-start;
+  gap: 1rem;
+}
+
+header .header-element a {
+  color: var(--header-text-color-light);
+  text-decoration: none;
+}
+
+main {
+  height: 100vh;
+  margin: 0 1rem;
+}
+
+footer {
+  background-color: var(--footer-background-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 4rem 0;
+  width: 100vw;
+  color: var(--footer-text-color);
+}
